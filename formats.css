@@ -18,3 +18,40 @@
     --light-sky: #A4D3F2;
     --cloud: #C7CBDA; 
 }
+
+* 
+{
+    box-sizing: border-box;
+}
+
+body
+{
+    padding: 0;
+    margin: 0;
+    font-size: 16px;
+    font-family: sans-serif, sans;
+}
+
+.nav-bar
+{
+    background-color: var(--red);
+    padding: 0px;
+    margin: 0px;
+    height: 140px;
+    width: 100%;
+}
+
+.title
+{
+    vertical-align: top;
+    margin-top: 50px;
+    color: var(--white);
+    font-size: 35px;
+    display: inline-block;
+}
+
+.logo
+{
+    height: 140px;
+    width: auto;
+}
