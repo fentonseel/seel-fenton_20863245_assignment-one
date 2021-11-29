@@ -106,7 +106,6 @@ body
 {
     display: inline-block;
     font-size: 20px;
-    font: bold;
 }
 
 .page-selection a
@@ -123,7 +122,6 @@ body
 .page-selection-burger-menu li
 {
     font-size: 20px;
-    font: bold;
 }
 
 .page-selection-burger-menu ul
@@ -179,8 +177,21 @@ body
 .page-title
 {
     color: var(--grey);
-    font-size: 30px;
+    font-size: 35px;
     text-align: center;
+}
+
+.video-title
+{
+    color: var(--gold);
+    font-size: 30px;
+}
+
+.video
+{
+    display: block;
+    width: 500px;
+    height: 280px;
 }
 
 .product-images
@@ -191,6 +202,11 @@ body
 
 @media only screen and (max-width: 875px)
 {
+    .video-title
+    {
+        font-size: 22px;
+    }
+
     .su-link
     {
         font-size: 16px;
@@ -213,7 +229,7 @@ body
 
     .page-title
     {
-        font-size: 22px;
+        font-size: 25px;
     }
 
     .logo
@@ -234,6 +250,11 @@ body
 
     @media only screen and (max-width: 592px)
     {
+        .video-title
+        {
+            font-size: 18px;
+        }
+
         .su-link
         {
             font-size: 14px;
@@ -251,7 +272,7 @@ body
 
         .page-title
         {
-            font-size: 17px;
+            font-size: 20px;
         }
     
         .logo
@@ -271,6 +292,11 @@ body
         }
         @media only screen and (max-width: 490px)
         {
+            .video-title
+            {
+                font-size: 13px;
+            }
+
             .su-link
             {
                 font-size: 12px;
