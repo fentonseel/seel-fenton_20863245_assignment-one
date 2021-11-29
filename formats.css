@@ -191,6 +191,11 @@ body
 
 @media only screen and (max-width: 875px)
 {
+    .su-link
+    {
+        font-size: 16px;
+    }
+
     .footer-headings
     {
         font-size: 11px;
@@ -229,6 +234,11 @@ body
 
     @media only screen and (max-width: 592px)
     {
+        .su-link
+        {
+            font-size: 14px;
+        }
+
         .footer-headings
         {
             font-size: 10px;
@@ -261,10 +271,16 @@ body
         }
         @media only screen and (max-width: 490px)
         {
+            .su-link
+            {
+                font-size: 12px;
+            }
+
             .footer-headings
             {
                 font-size: 9px;
             }
+
             .site-title
             {
                 font-size: 17px;
