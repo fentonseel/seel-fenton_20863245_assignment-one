@@ -43,7 +43,7 @@ body
 
 .footer
 {
-    position: fixed;
+    display: block;
     bottom: 0;
     background-color: var(--grey);
     width: 100%;
@@ -190,8 +190,8 @@ body
 .video
 {
     display: block;
-    width: 500px;
-    height: 280px;
+    width: 800px;
+    height: 400px;
 }
 
 .product-images
@@ -202,6 +202,12 @@ body
 
 @media only screen and (max-width: 875px)
 {
+    .video 
+    {
+        width: 95%;
+        height: 300px; 
+    }
+
     .video-title
     {
         font-size: 22px;
@@ -252,7 +258,7 @@ body
     {
         .video
         {
-            width: 100%;
+            width: 60%;
             height: 30%;
         }
 
