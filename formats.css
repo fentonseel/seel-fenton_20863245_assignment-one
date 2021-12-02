@@ -200,8 +200,15 @@ body
     width: 200px;
 }
 
-@media only screen and (max-width: 875px)
+@media only screen and (max-width: 1020px)
 {
+    .video
+    {
+        width: 700px;
+    }
+
+    @media only screen and (max-width: 875px)
+    {
     .video 
     {
         width: 95%;
@@ -258,7 +265,7 @@ body
     {
         .video
         {
-            width: 60%;
+            width: 95%;
             height: 30%;
         }
 
@@ -306,6 +313,7 @@ body
         {
             .video
             {
+                width: 100%;
                 height: 20%
             }
 
@@ -354,6 +362,7 @@ body
             {
                 .video
                 {
+                    width: 100%;
                     height: 20%
                 }
 
@@ -383,5 +392,6 @@ body
                 }
             }
         }
+    }
     }
 }
