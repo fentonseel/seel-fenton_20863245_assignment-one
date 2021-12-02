@@ -5,4 +5,3 @@ function burgerMenuClick() {
 
     console.log(navi.classList);
 }
-
