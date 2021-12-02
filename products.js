@@ -1,3 +1,15 @@
+function handleAddToCart(prod)
+{
+    var itemContainer = prod.parentElement;
+    var itemTitle = itemContainer.getElementsByTagName("p")[0].innerHTML;
+    var itemPrice = itemContainer.getElementsByTagName("p")[2].innerHTML;
+    var itemImage = itemContainer.getElementsByTagName("img")[0].getAttribute("src");
+    alert(itemTitle + " Added to Cart");
+
+    var storageLength = localStorage.length;
+    localStorage.setItem(storageLength + 1, itemTitle + ", " + itemPrice + ", " + itemImage);
+}
+
 var hoodiesList = ["UCLan-logo-hoodie-Black.jpg", "UCLan-logo-hoodie-Black2.jpg", "UCLan-logo-hoodie-Bright-Green.jpg", "UCLan-logo-hoodie-Bright-Green2.jpg",
 "UCLan-logo-hoodie-Bright-Pink.jpg", "UCLan-logo-hoodie-Burgundy-New.jpg", "UCLan-logo-hoodie-Burgundy.jpg",
 "UCLan-logo-hoodie-Charcoal.jpg", "UCLan-logo-hoodie-Creame.jpg", "UCLan-logo-hoodie-Dark-Grey.jpg",
@@ -66,7 +78,8 @@ for (var i = 0; i < 34; i++)
     var prodInfo = document.createElement("p");
     var prodPrice = document.createElement("p");
     var prodReadMore = document.createElement("a");
-    var prodBuy = document.createElement("a");
+    var prodBuy = document.createElement("button");
+    prodBuy.setAttribute("onclick", "handleAddToCart(this)");
 
     prodChild.classList.add("product-card");
     prodImage.classList.add("product-img");
@@ -109,7 +122,8 @@ for (var o = 0; o < 40; o++)
     var prodInfo = document.createElement("p");
     var prodPrice = document.createElement("p");
     var prodReadMore = document.createElement("a");
-    var prodBuy = document.createElement("a");
+    var prodBuy = document.createElement("button");
+    prodBuy.setAttribute("onclick", "handleAddToCart(this)");
 
     prodChild.classList.add("product-card");
     prodImage.classList.add("product-img");
@@ -152,7 +166,8 @@ for (var u = 0; u < 34; u++)
     var prodInfo = document.createElement("p");
     var prodPrice = document.createElement("p");
     var prodReadMore = document.createElement("a");
-    var prodBuy = document.createElement("a");
+    var prodBuy = document.createElement("button");
+    prodBuy.setAttribute("onclick", "handleAddToCart(this)");
 
     prodChild.classList.add("product-card");
     prodImage.classList.add("product-img");
