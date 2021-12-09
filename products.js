@@ -90,11 +90,17 @@ for (var i = 0; i < 34; i++)
     prodBuy.classList.add("buy");
 
     prodImage.src = "store-items/" + hoodieTitle;
+    prodImage.alt = "This is an image of a " + hoodieName;
     prodBuy.innerHTML = "Buy";
     prodName.innerHTML = hoodieName;
     prodReadMore.innerHTML = "(Read More)";
     prodInfo.innerHTML = hoodieInfo;
     prodPrice.innerHTML = hoodiePrice;
+
+    if (i == 0)
+    {
+        prodChild.id = "idHoodies";
+    }
 
     prodInfo.appendChild(prodReadMore);
     prodChild.appendChild(prodImage);
@@ -140,6 +146,11 @@ for (var o = 0; o < 40; o++)
     prodInfo.innerHTML = jumperInfo;
     prodPrice.innerHTML = jumperPrice;
 
+    if (o == 0)
+    {
+        prodChild.id = "idJumpers";
+    }
+
     prodInfo.appendChild(prodReadMore);
     prodChild.appendChild(prodImage);
     prodChild.appendChild(prodName);
@@ -183,6 +194,11 @@ for (var u = 0; u < 34; u++)
     prodReadMore.innerHTML = "(Read More)";
     prodInfo.innerHTML = tshirtInfo;
     prodPrice.innerHTML = tshirtPrice;
+
+    if (u == 0)
+    {
+        prodChild.id = "idTshirts";
+    }
 
     prodInfo.appendChild(prodReadMore);
     prodChild.appendChild(prodImage);
