@@ -24,12 +24,14 @@
                 </ul>
             </div>
             
-            <div class="burger-menu" onclick="burgerMenuClick()">
+            <!--The div below is each bar of the hamburger menu (https://www.w3schools.com/howto/howto_css_menu_icon.asp)-->
+            <div class="burger-menu" onclick="burgerMenuClick()"> <!--The onclick is referencing to the function in standard.js-->
                 <div class="bar1"></div>
                 <div class="bar2"></div>
                 <div class="bar3"></div>
             </div>
 
+            <!--This is the button that are shown when the hamburger menu is selected-->
             <div class="page-selection-burger-menu">
                 <ul class="hide" id=burgerMenuSelection>
                     <li><a class="home-bm" href="index.html"> Home </a></li>
@@ -39,29 +41,31 @@
             </div>
         </div>
 
+        <!--The home container is what has all the content of the page in it-->
         <div class="home-container">
-            <h2 class="page-title">Where Opportunity Creates Success</h2>
-            <p class="home-content">
+            <h2 class="page-title">Where Opportunity Creates Success</h2> <!--The title of the page, shown below the header-->
+            <p class="home-content"> <!--The paragraph of text below the title-->
                 Every student at The University of Central Lancashire is automatically a member of the Student's Union. We're here to make life better for students - inspiring you to succeed and achieve your goals.
             </p>
             <h2 class="video-title">Together</h2>
-            <iframe class="video" title="together-video" src="https://www.youtube.com/embed/xTvk2OCMyWE" controls></iframe>
+            <iframe class="video" title="together-video" src="https://www.youtube.com/embed/xTvk2OCMyWE" controls></iframe> <!--This is the first video that is an embedded YouTube video-->
             <h2 class="video-title">Join our global community</h2>
-            <video class="video" title="global-community-video" src="UCLan Together – Join our global community.mp4" type="video/mp4" controls></video>
+            <video class="video" title="global-community-video" src="UCLan Together – Join our global community.mp4" type="video/mp4" controls></video> <!--The second video that is a downloaded mp4-->
         </div>
         
+        <!--The below div is the contents of the footer-->
         <div class="footer">
             <div class="footer-headings">
-                <h1> Links </h1>
+                <h1> Links </h1> <!--This is the title for links-->
                 <div>
-                    <p><a class="su-link" href="https://www.uclansu.co.uk/"> UCLan Student's Union </a></p>
+                    <p><a class="su-link" href="https://www.uclansu.co.uk/"> UCLan Student's Union </a></p> <!--This allows the user to navigate to the required link-->
                 </div>
             </div>
 
             <div class="footer-headings">
                 <h1> Contacts </h1>
                 <div>
-                    <p>Email: suinformation@uclan.ac.uk</p>
+                    <p>Email: suinformation@uclan.ac.uk</p> <!--These are just basic text informing the user of contacts-->
                     <p>Phone: 01772 893000</p>
                 </div>
             </div>
@@ -69,7 +73,7 @@
             <div class="footer-headings">
                 <h1> Location </h1>
                 <div>
-                    <p>University of Central Lancashire Student's Union</p>
+                    <p>University of Central Lancashire Student's Union</p> <!--Similar to the contacts this is just text showing the location-->
                     <p>Fylde Road, Preston, PR1 7BY</p>
                     <p>Registered in England</p>
                     <p>Company Number: 7623917</p>
@@ -77,6 +81,6 @@
                 </div>
             </div>
         </div>
-        <script src="standard.js"></script>
+        <script src="standard.js"></script> <!--This links the JavaScript file standard.js to this, allowing the use of the hamburger menu (https://www.w3schools.com/howto/howto_css_menu_icon.asp)-->
     </body>
 </html>

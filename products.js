@@ -1,15 +1,20 @@
+//This function is activated when the uer selects the 'Buy' button
 function handleAddToCart(prod)
 {
+    //The 4 variables below contain the information that corresponds with the product when it is added to the cart
     var itemContainer = prod.parentElement;
     var itemTitle = itemContainer.getElementsByTagName("p")[0].innerHTML;
     var itemPrice = itemContainer.getElementsByTagName("p")[2].innerHTML;
     var itemImage = itemContainer.getElementsByTagName("img")[0].getAttribute("src");
-    alert(itemTitle + " Added to Cart");
 
+    alert(itemTitle + " Added to Cart"); //This causes a pop up box to appear when the user selects 'Buy'
+
+    //This stores the contents of the previous variables into the local storage
     var storageLength = localStorage.length;
     localStorage.setItem(storageLength + 1, itemTitle + ", " + itemPrice + ", " + itemImage);
 }
 
+//These three arrays below store the .jpg file names of each item. The arrays are seperated into hoodies, jumpers and t-shirts
 var hoodiesList = ["UCLan-Logo-Hoodie-Black.jpg", "UCLan-Logo-Hoodie-Black2.jpg", "UCLan-Logo-Hoodie-Bright-Green.jpg", "UCLan-Logo-Hoodie-Bright-Green2.jpg",
 "UCLan-Logo-Hoodie-Bright-Pink.jpg", "UCLan-Logo-Hoodie-Burgundy-New.jpg", "UCLan-Logo-Hoodie-Burgundy.jpg",
 "UCLan-Logo-Hoodie-Charcoal.jpg", "UCLan-Logo-Hoodie-Creame.jpg", "UCLan-Logo-Hoodie-Dark-Grey.jpg",
@@ -51,6 +56,7 @@ var tshirtList = ["UCLan-Logo-TShirt-Another-Green.jpg", "UCLan-Logo-TShirt-Anot
 "UCLan-Logo-TShirt-Teal-Blue.jpg", "UCLan-Logo-TShirt-Teal.jpg", "UCLan-Logo-TShirt-White.jpg",
 "UCLan-Logo-TShirt-Yellow.jpg"];
 
+//These variables below are what are constant for each product. For example, each hoodie has the same description and price.
 var hoodiePrice = "£39.99";
 var hoodieInfo = "cotton authentic character and practicality are combined in this comfy  warm and luxury hoodie for students that goes with everything to create casual looks";
 
@@ -60,18 +66,23 @@ var jumperInfo = "cotton authentic character and practicality are combined in th
 var tshirtPrice = "£19.99";
 var tshirtInfo = "cotton authentic character and practicality are combined in this summery t-shirt for students that goes with everything to create casual looks";
 
+//This is referring back to the id given in products.html and linking the two files together, to be used
 var prodParent = document.getElementById("productsContainer");
 
+//This for loop is used to go through and store the .jpg file name of each hoodie in hoodieList
 for (var i = 0; i < 34; i++)
 {
     var hoodieTitle;
     var hoodieName;
 
+    //This sets the title of the hoodie to the .jpg file name
     hoodieTitle = hoodiesList[i];
 
+    //The two lines below find and replace any '-' in the names with a space
     hoodieName = hoodieTitle.split(".") [0];
     hoodieName = hoodieName.replaceAll("-", " ");
 
+    //The below variables are created because there is one div, image, a tag and button and three p tags used per item  
     var prodChild = document.createElement("div");
     var prodImage = document.createElement("img");
     var prodName = document.createElement("p");
@@ -79,8 +90,9 @@ for (var i = 0; i < 34; i++)
     var prodPrice = document.createElement("p");
     var prodReadMore = document.createElement("a");
     var prodBuy = document.createElement("button");
-    prodBuy.setAttribute("onclick", "handleAddToCart(this)");
+    prodBuy.setAttribute("onclick", "handleAddToCart(this)"); //This is adding the 'Buy' button onto each product card
 
+    //This is linking the class names from formats.css causing each product card to be formatted
     prodChild.classList.add("product-card");
     prodImage.classList.add("product-img");
     prodName.classList.add("product-title");
@@ -89,7 +101,8 @@ for (var i = 0; i < 34; i++)
     prodReadMore.classList.add("read-more");
     prodBuy.classList.add("buy");
 
-    prodImage.src = "store-items/" + hoodieTitle;
+    //This is adding the relevant information that is needed for each card
+    prodImage.src = "store-items/" + hoodieTitle; //This is importing the corresponding image
     prodImage.alt = "This is an image of a " + hoodieName;
     prodBuy.innerHTML = "Buy";
     prodName.innerHTML = hoodieName;
