@@ -11,7 +11,7 @@ function handleAddToCart(prod)
 
     //This stores the contents of the previous variables into the local storage
     var storageLength = localStorage.length;
-    var itemStorage = localStorage.setItem(storageLength + 1, itemTitle + ", " + itemPrice + ", " + itemImage);
+    localStorage.setItem(storageLength + 1, itemTitle + ", " + itemPrice + ", " + itemImage);
 }
 
 //These three arrays below store the .jpg file names of each item. The arrays are seperated into hoodies, jumpers and t-shirts

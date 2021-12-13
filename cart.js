@@ -19,8 +19,8 @@ cartProdPrice.classList.add("cart-price");
 cartProdRemove.classList.add("remove");
 
 cartProdImage.src = "store-items/" + hoodieTitle;
-cartProdImage.alt = "This is an image of a " + hoodieName;
+cartProdImage.alt = "This is an image of a " + window.localStorage.getItem(itemTitle);
 cartProdRemove.innerHTML = "Remove";
-cartProdName.innerHTML = hoodieName;
-cartProdNum.innerHTML = hoodieInfo;
-cartProdPrice.innerHTML = hoodiePrice;
+cartProdName.innerHTML = window.localStorage.getItem(itemTitle);
+cartProdNum.innerHTML = window.localStorage.getItem(storageLength);
+cartProdPrice.innerHTML = window.localStorage.getItem(itemPrice);

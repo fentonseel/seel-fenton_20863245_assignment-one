@@ -315,7 +315,7 @@ body
 .cart-prod-img
 {
     display: flex;
-    width: 21%;
+    width: 20%;
 }
 
 .cart-prod
@@ -361,7 +361,7 @@ body
     background-color: var(--dark-red);
 }
 
-.item
+.item-card
 {
     display: flex;
     flex-direction: row;
@@ -372,7 +372,7 @@ body
     border: var(--black) solid 2px;
 }
 
-.item >*
+.item-card >*
 {
     margin-block: auto;
 }
