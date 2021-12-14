@@ -1,4 +1,5 @@
-function burgerMenuClick() {
+function burgerMenuClick() 
+{
     let navi = document.getElementById("burgerMenuSelection");
 
     navi.classList.toggle("hide");

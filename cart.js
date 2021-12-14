@@ -5,32 +5,47 @@ function handleRemoveFromCart()
 
 var cartProdParent = document.getElementById("cartContainer");
 
-var cartProdChild = document.createElement("div");
-var cartProdName = document.createElement("p");
-var cartProdImage = document.createElement("img");
-var cartProdNum = document.createElement("p");
-var cartProdPrice = document.createElement("p");
-var cartProdRemove = document.createElement("button");
-cartProdRemove.setAttribute("onclick", "handleRemoveFromCart(this)");
+if (localStorage.length != 0)
+{
+    for (var i = 1; i <= localStorage.length; i++)
+    {
+        var cartProdChild = document.createElement("div");
+        var cartProdName = document.createElement("p");
+        var cartProdImage = document.createElement("img");
+        var cartProdNum = document.createElement("p");
+        var cartProdPrice = document.createElement("p");
+        var cartProdRemove = document.createElement("button");
+        cartProdRemove.setAttribute("onclick", "handleRemoveFromCart(this)");
 
-cartProdChild.classList.add("item-card");
-cartProdName.classList.add("cart-prod");
-cartProdImage.classList.add("cart-prod-img");
-cartProdNum.classList.add("item-num");
-cartProdPrice.classList.add("cart-price");
-cartProdRemove.classList.add("remove");
+        cartProdChild.classList.add("item-card");
+        cartProdName.classList.add("cart-prod");
+        cartProdImage.classList.add("cart-prod-img");
+        cartProdNum.classList.add("item-num");
+        cartProdPrice.classList.add("cart-price");
+        cartProdRemove.classList.add("remove");
 
-cartProdImage.src = window.localStorage.getItem(itemImage);
-cartProdImage.alt = "This is an image of a " + window.localStorage.getItem(itemTitle);
-cartProdRemove.innerHTML = "Remove";
-cartProdName.innerHTML = window.localStorage.getItem(itemTitle);
-cartProdNum.innerHTML = window.localStorage.getItem(storageLength);
-cartProdPrice.innerHTML = window.localStorage.getItem(itemPrice);
+        var cartVal = localStorage.getItem(i);
+        var cartValArray = cartVal.split(", ");
 
-cartProdChild.appendChild(cartProdImage);
-cartProdChild.appendChild(cartProdName);
-cartProdChild.appendChild(cartProdNum);
-cartProdChild.appendChild(cartProdPrice);
-cartProdChild.appendChild(cartProdRemove);
+        cartProdImage.src = cartValArray[2];
+        cartProdImage.alt = "This is an image of a " + cartValArray[0];
+        cartProdRemove.innerHTML = "Remove";
+        cartProdName.innerHTML = cartValArray[0];
+        cartProdNum.innerHTML = i;
+        cartProdPrice.innerHTML = cartValArray[1];
 
-cartProdParent.appendChild(cartProdChild);
+        cartProdChild.appendChild(cartProdNum);
+        cartProdChild.appendChild(cartProdImage);
+        cartProdChild.appendChild(cartProdName);
+        cartProdChild.appendChild(cartProdPrice);
+        cartProdChild.appendChild(cartProdRemove);
+
+        cartProdParent.appendChild(cartProdChild);
+    }
+}
+
+else
+{
+    var emptyCart = document.getElementById("cartNone");
+    emptyCart.classList.toggle("hide");
+}
