@@ -10,8 +10,25 @@ function handleAddToCart(prod)
     alert(itemTitle + " Added to Cart"); //This causes a pop up box to appear when the user selects 'Buy'
 
     //This stores the contents of the previous variables into the local storage
-    var storageLength = localStorage.length;
-    localStorage.setItem(storageLength + 1, itemTitle + ", " + itemPrice + ", " + itemImage);
+    var maxId = 0;
+    var itemKey;
+
+    //This is to make sure no current item is overridden, due to duplicate keys
+    //This ensures all keys are unique
+    if (localStorage.length > 0)
+    {
+        maxId = -1; //This is set to -1 to allow the itemKey to be greater than maxId, to allow the below if statement to work
+        for (var i = 0; i < localStorage.length; ++i) 
+        {
+            itemKey = parseInt(localStorage.key(i));
+            if (itemKey > maxId)
+            {
+                maxId = itemKey + 1;
+            }
+        }
+    }
+
+    localStorage.setItem(maxId, itemTitle + ", " + itemPrice + ", " + itemImage);
 }
 
 function readMoreNav()

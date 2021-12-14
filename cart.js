@@ -1,13 +1,15 @@
-function handleRemoveFromCart()
+function handleRemoveFromCart(cartProd)
 {
-    localStorage.removeItem();
+    var itemId = cartProd.parentElement.getElementsByTagName("p")[0].innerHTML;
+    localStorage.removeItem(itemId);
+    location.reload();
 }
 
 var cartProdParent = document.getElementById("cartContainer");
 
 if (localStorage.length != 0)
 {
-    for (var i = 1; i <= localStorage.length; i++)
+    for (var i = 0; i < localStorage.length; ++i)
     {
         var cartProdChild = document.createElement("div");
         var cartProdName = document.createElement("p");
@@ -24,14 +26,14 @@ if (localStorage.length != 0)
         cartProdPrice.classList.add("cart-price");
         cartProdRemove.classList.add("remove");
 
-        var cartVal = localStorage.getItem(i);
+        var cartVal = localStorage.getItem(localStorage.key(i));
         var cartValArray = cartVal.split(", ");
 
         cartProdImage.src = cartValArray[2];
         cartProdImage.alt = "This is an image of a " + cartValArray[0];
         cartProdRemove.innerHTML = "Remove";
         cartProdName.innerHTML = cartValArray[0];
-        cartProdNum.innerHTML = i;
+        cartProdNum.innerHTML = localStorage.key(i);
         cartProdPrice.innerHTML = cartValArray[1];
 
         cartProdChild.appendChild(cartProdNum);
