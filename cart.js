@@ -9,7 +9,8 @@ var cartProdParent = document.getElementById("cartContainer");
 
 if (localStorage.length != 0)
 {
-    for (var i = 0; i < localStorage.length; ++i)
+    //This for loop goes through the contents of the local storage, adding each element of the products to the page
+    for (var i = 0; i < localStorage.length; ++i) //https://stackoverflow.com/questions/8419354/get-html5-localstorage-keys
     {
         var cartProdChild = document.createElement("div");
         var cartProdName = document.createElement("p");

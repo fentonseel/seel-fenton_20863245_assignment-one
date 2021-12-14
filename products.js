@@ -18,7 +18,7 @@ function handleAddToCart(prod)
     if (localStorage.length > 0)
     {
         maxId = -1; //This is set to -1 to allow the itemKey to be greater than maxId, to allow the below if statement to work
-        for (var i = 0; i < localStorage.length; ++i) 
+        for (var i = 0; i < localStorage.length; ++i) //https://stackoverflow.com/questions/8419354/get-html5-localstorage-keys
         {
             itemKey = parseInt(localStorage.key(i));
             if (itemKey > maxId)
@@ -31,9 +31,19 @@ function handleAddToCart(prod)
     localStorage.setItem(maxId, itemTitle + ", " + itemPrice + ", " + itemImage);
 }
 
-function readMoreNav()
+function readMoreNav(readMoreProd)
 {
-    window.location.href = "item.html";
+    var readMoreContainer = readMoreProd.parentElement.parentElement;
+    var readItemTitle = readMoreContainer.getElementsByTagName("p")[0].innerHTML;
+    var readItemInfo = readMoreContainer.getElementsByTagName("p")[1].innerHTML;
+    readItemInfo = readItemInfo.split("<a")[0];
+    var readItemPrice = readMoreContainer.getElementsByTagName("p")[2].innerHTML;
+    var readItemImage = readMoreContainer.getElementsByTagName("img")[0].getAttribute("src");
+
+    var readMoreKey = 1;
+
+    sessionStorage.clear();
+    sessionStorage.setItem(readMoreKey, readItemTitle + ", " + readItemInfo + ", " + readItemPrice + ", " + readItemImage);
 }
 
 //These three arrays below store the .jpg file names of each item. The arrays are seperated into hoodies, jumpers and t-shirts
@@ -129,7 +139,8 @@ for (var i = 0; i < 34; i++)
     prodImage.alt = "This is an image of a " + hoodieName;
     prodBuy.innerHTML = "Buy";
     prodName.innerHTML = hoodieName;
-    prodReadMore.innerHTML = "(Read More)";
+    prodReadMore.innerHTML = " (Read More)";
+    prodReadMore.href = "item.html";
     prodInfo.innerHTML = hoodieInfo;
     prodPrice.innerHTML = hoodiePrice;
 
@@ -179,7 +190,8 @@ for (var o = 0; o < 40; o++)
     prodImage.src = "store-items/" + jumperTitle;
     prodBuy.innerHTML = "Buy";
     prodName.innerHTML = jumperName;
-    prodReadMore.innerHTML = "(Read More)";
+    prodReadMore.innerHTML = " (Read More)";
+    prodReadMore.href = "item.html";
     prodInfo.innerHTML = jumperInfo;
     prodPrice.innerHTML = jumperPrice;
 
@@ -229,7 +241,8 @@ for (var u = 0; u < 34; u++)
     prodImage.src = "store-items/" + tshirtTitle;
     prodBuy.innerHTML = "Buy";
     prodName.innerHTML = tshirtName;
-    prodReadMore.innerHTML = "(Read More)";
+    prodReadMore.innerHTML = " (Read More)";
+    prodReadMore.href = "item.html";
     prodInfo.innerHTML = tshirtInfo;
     prodPrice.innerHTML = tshirtPrice;
 
