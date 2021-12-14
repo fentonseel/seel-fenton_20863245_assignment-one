@@ -244,6 +244,7 @@ body
 
 .read-more
 {
+    cursor: pointer;
     color: var(--red);
 }
 
@@ -375,6 +376,43 @@ body
 .item-card >*
 {
     margin-block: auto;
+}
+
+.product-container
+{
+    display: flex;
+    flex-direction: column;
+    width: 55%;
+    border: var(--black) solid 2px;
+    margin: 16px auto;
+}
+
+.rm-prod-img
+{
+    display: block;
+    height: 40%;
+    max-width: 95%;
+    align-self: center;
+}
+
+.rm-prod-title
+{
+    font-size: 20px;
+    margin-left: 10px;
+    font-weight: 700;
+    color: var(--dark-blue);
+}
+
+.rm-prod-info
+{
+    margin-left: 10px;
+}
+
+.rm-prod-price
+{
+    font-weight: 700;
+    margin-left: 10px;
+    color: var(--red);
 }
 
 @media only screen and (max-width: 1020px)

@@ -14,6 +14,11 @@ function handleAddToCart(prod)
     localStorage.setItem(storageLength + 1, itemTitle + ", " + itemPrice + ", " + itemImage);
 }
 
+function readMoreNav()
+{
+    window.location.href = "item.html";
+}
+
 //These three arrays below store the .jpg file names of each item. The arrays are seperated into hoodies, jumpers and t-shirts
 var hoodiesList = ["UCLan-Logo-Hoodie-Black.jpg", "UCLan-Logo-Hoodie-Black2.jpg", "UCLan-Logo-Hoodie-Bright-Green.jpg", "UCLan-Logo-Hoodie-Bright-Green2.jpg",
 "UCLan-Logo-Hoodie-Bright-Pink.jpg", "UCLan-Logo-Hoodie-Burgundy-New.jpg", "UCLan-Logo-Hoodie-Burgundy.jpg",
@@ -91,6 +96,7 @@ for (var i = 0; i < 34; i++)
     var prodReadMore = document.createElement("a");
     var prodBuy = document.createElement("button");
     prodBuy.setAttribute("onclick", "handleAddToCart(this)"); //This is adding the 'Buy' button onto each product card
+    prodReadMore.setAttribute("onclick", "readMoreNav(this)")
 
     //This is linking the class names from formats.css causing each product card to be formatted
     prodChild.classList.add("product-card");
@@ -143,6 +149,7 @@ for (var o = 0; o < 40; o++)
     var prodReadMore = document.createElement("a");
     var prodBuy = document.createElement("button");
     prodBuy.setAttribute("onclick", "handleAddToCart(this)");
+    prodReadMore.setAttribute("onclick", "readMoreNav(this)")
 
     prodChild.classList.add("product-card");
     prodImage.classList.add("product-img");
@@ -192,6 +199,7 @@ for (var u = 0; u < 34; u++)
     var prodReadMore = document.createElement("a");
     var prodBuy = document.createElement("button");
     prodBuy.setAttribute("onclick", "handleAddToCart(this)");
+    prodReadMore.setAttribute("onclick", "readMoreNav(this)")
 
     prodChild.classList.add("product-card");
     prodImage.classList.add("product-img");
