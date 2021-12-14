@@ -1,3 +1,4 @@
+/*This class below adds all the colours that are potentially used throughout the project*/
 :root
 {
     --black: #000;
@@ -20,11 +21,13 @@
     --dark-blue: #2c4257;
 }
 
+/*This class applies the box-sizing format across all created pages*/
 * 
 {
     box-sizing: border-box;
 }
 
+/*This class adds global formatting to all bodies of pages, setting the default font size and family*/
 body
 {
     padding: 0;
@@ -33,6 +36,8 @@ body
     font-family: sans-serif, sans;
 }
 
+/*This class formats the header across all pages
+It sets the colour, height and width, but also ensures it doesn't have a margin or any padding*/
 .nav-bar
 {
     background-color: var(--red);
@@ -42,6 +47,8 @@ body
     width: 100%;
 }
 
+/*This class formats the footer across all pages
+It ensures it sticks to the bottom of the page, whilst also setting the colour and width*/
 .footer
 {
     display: block;
@@ -53,6 +60,8 @@ body
     bottom: 0;
 }
 
+/*This class formats the headings of the text within the footer, setting a font-size and colour.
+It also makes the headings evenly spaced across the footer*/
 .footer-headings
 {
     display: inline-block;
@@ -64,11 +73,14 @@ body
     margin-bottom: 15px;
 }
 
+/*This class makes all the <p> tags in the footer evenly spaced with a margin of 5 pixels*/
 .footer-headings p
 {
     margin: 5px;
 }
 
+/*This formats the <a> tag link in the footer
+It sets the colour to blue, removes any default styling and changes the font size to 15 pixels*/
 .su-link
 {
     list-style-type: none;
@@ -76,6 +88,7 @@ body
     font-size: 15px;
 }
 
+/*This formats the title in the header, setting the colour to white and enlarging the font*/
 .site-title
 {
     vertical-align: top;
@@ -85,17 +98,20 @@ body
     display: inline-block;
 }
 
+/*This formats the imported logo, setting its initial height and width*/
 .logo
 {
     height: 140px;
     width: auto;
 }
 
+/*This makes the navigation buttons inline, instead of on top of each other*/
 .page-selection
 {
     display: inline;
 }
 
+/*This formats the containers for the navigation buttons*/
 .page-selection ul
 {
     float: right;
@@ -105,28 +121,33 @@ body
     padding-top: 100px;
 }
 
+/*This formats the font size of the text in the navigation buttons*/
 .page-selection li
 {
     display: inline-block;
     font-size: 20px;
 }
 
+/*This formats the colour and removes any default decoration to the text in the navigation butons*/
 .page-selection a
 {
     text-decoration: none;
     color: var(--white);
 }
 
+/*This is formatting that is activated when the user hovers over the navigation buttons*/
 .page-selection li a:hover
 {
     background-color: var(--dark-red);
 }
 
+/*This sets the font size of the navigation buttons within the hambuger menu*/
 .page-selection-burger-menu li
 {
     font-size: 20px;
 }
 
+/*This formats the container of the navigation buttons within the hamburger menu, setting the background colour to red*/
 .page-selection-burger-menu ul
 {
     float: right;
@@ -136,22 +157,26 @@ body
     padding: 5px;
 }
 
+/*This formats the colour and removes any default decoration to the text in the navigation butons within the hamburger menu*/
 .page-selection-burger-menu a
 {
     text-decoration: none;
     color: var(--white);
 }
 
+/*This is formatting that is activated when the user hovers over the navigation buttons within the hamburger menu*/
 .page-selection-burger-menu li a:hover
 {
     background-color: var(--dark-red);
 }
 
+/*This is a class that is used for the hamburger menu and empty cart that hides them until they're required*/
 .hide
 {
     display: none;
 }
 
+/*This formats the hamburger menu, setting it's location on the header*/
 .burger-menu
 {
     display: none;
@@ -162,6 +187,7 @@ body
     padding: 5px;
 }
 
+/*This formats the white bars that form the hamburger menu*/
 .bar1, .bar2, .bar3
 {
     width: 35px;
@@ -170,6 +196,7 @@ body
     margin: 6px 0;
 }
 
+/*This class contains the contents of the home page and sets the default size of the container*/
 .home-container
 {
     display: block;
@@ -177,6 +204,7 @@ body
     margin: 16px auto;
 }
 
+/*This formats the title of the home page, setting it's colour and font size, whilst centering the text*/
 .page-title
 {
     color: var(--grey);
@@ -184,12 +212,14 @@ body
     text-align: center;
 }
 
+/*This formats the title of the videos, setting the colour and font size*/
 .video-title
 {
     color: var(--gold);
     font-size: 30px;
 }
 
+/*This sets the default size and behaviour of the videos*/
 .video
 {
     display: block;
@@ -197,6 +227,8 @@ body
     height: 400px;
 }
 
+/*This contains all of the product cards on products.html
+It sets a size and display of flex, allowing the page to be easily responsive*/
 .products
 {
     display: flex;
@@ -209,12 +241,14 @@ body
     flex-grow: 0;
 }
 
+/*This formats the size image of each product on each product card*/
 .product-img
 {
     width: 100%;
     height: auto;
 }
 
+/*This formats the colour and size of each product card*/
 .product-card
 {
     background-color: var(--slate);
@@ -222,6 +256,7 @@ body
     flex-basis: 300px;
 }
 
+/*This formats the name of each product, setting a colour, font size and weight to make it bold*/
 .product-title
 {
     text-align: center;
@@ -230,12 +265,16 @@ body
     color: var(--gold);
 }
 
+/*This formats the description of each product on each product card
+It sets the colour and alligns the text to the centre of the card*/
 .product-info
 {
     color: var(--white);
     text-align: center;
 }
 
+/*This formats the price of each product on the product cards
+It sets the colour, makes it bold and alligns the text to the centre*/
 .product-price
 {
     color: var(--white);
@@ -243,12 +282,15 @@ body
     font-weight: 700;
 }
 
+/*This formats the 'Read More' link, setting its colour to red and allowing the user to select it*/
 .read-more
 {
     cursor: pointer;
     color: var(--red);
 }
 
+/*This formats the 'Buy' button on products.html and item.html
+Setting the background colour, text colour, font size, font weight and button size*/
 .buy
 {
     padding: 10px 15px;
@@ -264,35 +306,46 @@ body
     transition: 0.3s;
 }
 
+/*This is activated when the user hovers over the 'Buy' button*/
 .buy:hover
 {
     background-color: var(--dark-blue); 
 }
 
+/*This removes the bullet points from the product navigation buttons*/
 .prod-nav ul
 {
     list-style-type: none;
 }
 
+/*This causes the product navigation buttons to be inline with each other*/
 .prod-nav li
 {
     display: inline-block;
 }
 
+/*This formats the text of the product navigation buttons
+Setting the colour to blue and removing any default decoration*/
 .prod-nav a 
 {
     color: var(--blue);
     text-decoration: none;
 }
 
+/*This formats the 'Back To Top' button
+Setting the colour to blue and causing it to be visable thorughout the page*/
 .back-to-top
 {
-    color: var(--blue);
+    color: var(--black);
     display: block;
     position: fixed;
-    padding-left: 40px;
+    margin-left: 40px;
+    text-decoration: none;
+    padding: 5px;
+    background-color: var(--cloud);
 }
 
+/*This contains all the contents of cart.html*/
 .cart
 {
     display: block;
@@ -301,6 +354,8 @@ body
     height: 100%;
 }
 
+/*This formats the title of the page, setting the colour, font size
+and forcing the text to the left side of the container*/
 .cart-title
 {
     color: var(--gold);
@@ -308,6 +363,8 @@ body
     font-size: 25px;
 }
 
+/*This is the container of the item cards
+The display is set to flex, in order to make it easily responsive*/
 .cart-content
 {
     display: flex;
@@ -315,12 +372,15 @@ body
     flex-wrap: wrap;
 }
 
+/*This formats the size of the image within the item card*/
 .cart-prod-img
 {
     display: flex;
     width: 20%;
 }
 
+/*This formats the name of the product
+Setting the colour, font weight and centering the text*/
 .cart-prod
 {
     display: block;
@@ -330,6 +390,8 @@ body
     margin-bottom: 0;
 }
 
+/*This formats the item number
+Setting the colour and font weight*/
 .item-num
 {
     display: flex;
@@ -339,6 +401,8 @@ body
     width: 8%;
 }
 
+/*This formats the item price
+Setting the colour and font weight*/
 .cart-price
 {
     display: flex;
@@ -348,6 +412,8 @@ body
     width: 10%;
 }
 
+/*This formats the 'Remove' button shown on the item cards
+It sets the text colour, background colour and allows the user to select it*/
 .remove
 {
     display: flex;
@@ -360,23 +426,14 @@ body
     border: none;
 }
 
+/*This activates when the user hovers over the 'Remove' button*/
 .remove:hover
 {
     background-color: var(--dark-red);
 }
 
-.remove-all
-{
-    display: flex;
-    flex-direction: row;
-    background-color: var(--red);
-    color: var(--white);
-    padding: 5px;
-    cursor: pointer;
-    transition: 0.3s;
-    border: none;
-}
-
+/*This formats each item card in the cart
+Setting the display to flex to allow easy responsiveness, a border and causing the data in it to be spaced out evenly */
 .item-card
 {
     display: flex;
@@ -384,15 +441,16 @@ body
     justify-content: space-evenly;
     max-height: 200px;
     margin-bottom: 10px;
-    background-color: var(--white);
     border: var(--black) solid 2px;
 }
 
+/*This causes the 'Remove' button to be centred*/
 .item-card >*
 {
     margin-block: auto;
 }
 
+/*This contains all the data in the read more page*/
 .product-container
 {
     display: flex;
@@ -402,6 +460,8 @@ body
     margin: 16px auto;
 }
 
+/*This formats the image shown on the read more page
+Setting a size and centering it*/
 .rm-prod-img
 {
     display: block;
@@ -410,6 +470,8 @@ body
     align-self: center;
 }
 
+/*This formats the name of each product on item.html
+Setting the font size, weight and colour*/
 .rm-prod-title
 {
     font-size: 20px;
@@ -418,11 +480,15 @@ body
     color: var(--dark-blue);
 }
 
+/*This formats the description of the products on item.html
+It puts a gap between the border and the text making it more aesthetically pleasing*/
 .rm-prod-info
 {
     margin-left: 10px;
 }
 
+/*This formats the price of each product on item.html
+Setting the colour and font weight*/
 .rm-prod-price
 {
     font-weight: 700;
@@ -430,6 +496,8 @@ body
     color: var(--red);
 }
 
+/*This formats cart.html when the local storage is empty
+It sets a border and size to show the user where the products are added*/
 .empty-cart
 {
     width: 768px;
@@ -437,6 +505,8 @@ body
     border: var(--black) solid 2px;
 }
 
+/*This formats the title of the empty cart
+Setting a bottom border, font size, colour and alligning the text to the centre*/
 .empty-cart-title
 {
     text-align: center;  
@@ -446,6 +516,8 @@ body
     border-bottom: var(--black) solid 2px;
 }
 
+/*This media query is activated when the page width decreases below 1020 pixels
+This is so then the content adapts to the size of the screen accordingly*/
 @media only screen and (max-width: 1020px)
 {
     .video
@@ -453,6 +525,8 @@ body
         width: 700px;
     }
 
+    /*This media query is activated when the page width decreases below 875 pixels
+    This is so then the content adapts to the size of the screen*/
     @media only screen and (max-width: 875px)
     {
     .video 
@@ -527,7 +601,33 @@ body
         font-size: 14px;
     }
 
+    .product-title
+    {
+        font-size: 20px;
+    }
     
+    .product-info
+    {
+        font-size: 14px;
+    }
+
+    .product-container
+    {
+          width: 90%;      
+    }
+
+    .cart
+    {
+        width: 90%;
+    }
+
+    .empty-cart
+    {
+        width: 729px;
+    }
+
+    /*This media query is activated when the page width decreases below 592 pixels
+    This is so then the content adapts to the size of the screen*/
     @media only screen and (max-width: 592px)
     {
         .video
@@ -601,6 +701,9 @@ body
         {
             width: 95%;
         }
+
+        /*This media query is activated when the page width decreases below 490 pixels
+        This is so then the content adapts to the size of the screen*/
         @media only screen and (max-width: 490px)
         {
             .video
@@ -669,6 +772,64 @@ body
             {
                 font-size: 10px;
             }
+
+            .product-title
+            {
+                font-size: 18px;
+            }
+
+            .product-info
+            {
+                font-size: 12px;
+            }
+
+            .product-price
+            {
+                font-size: 14px;
+            }
+
+            .buy
+            {
+                font-size: 16px;
+            }
+
+            .back-to-top
+            {
+                font-size: 12px;
+            }
+
+            .prod-nav
+            {
+                font-size: 14px;
+            }
+
+            .rm-prod-title
+            {
+                font-size: 16px;
+            }
+
+            .rm-prod-info
+            {
+                font-size: 14px;
+            }
+
+            .rm-prod-price
+            {
+                font-size: 14px;
+            }
+
+            .empty-cart
+            {
+                width: 356px;
+            }
+
+            .cart-title
+            {
+                font-size: 20px;
+            }
+
+            /*This media query is activated when the page width decreases below 415 pixels
+            This is so then the content adapts to the size of the screen*/
             @media only screen and (max-width: 415px)
             {
                 .video
@@ -700,6 +861,21 @@ body
                 .page-selection-burger-menu li
                 {
                     font-size: 12px;
+                }
+
+                .empty-cart
+                {
+                    width: 393px;
+                }
+
+                /*This media query is activated when the page width decreases below 376 pixels
+                This is so then the content adapts to the size of the screen*/
+                @media only screen and (max-width: 376px)
+                {
+                    .empty-cart
+                    {
+                        width: 356px;
+                    }
                 }
             }
         }
