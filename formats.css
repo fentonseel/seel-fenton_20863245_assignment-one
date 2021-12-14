@@ -356,6 +356,7 @@ body
     padding: 5px;
     cursor: pointer;
     transition: 0.3s;
+    border: none;
 }
 
 .remove:hover
@@ -418,7 +419,18 @@ body
 
 .empty-cart
 {
-    
+    width: 768px;
+    height: 500px;
+    border: var(--black) solid 2px;
+}
+
+.empty-cart-title
+{
+    text-align: center;  
+    color: var(--blue);
+    font-size: 30px;
+    padding-bottom: 15px;
+    border-bottom: var(--black) solid 2px;
 }
 
 @media only screen and (max-width: 1020px)
