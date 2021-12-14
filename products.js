@@ -9,7 +9,6 @@ function handleAddToCart(prod)
 
     alert(itemTitle + " Added to Cart"); //This causes a pop up box to appear when the user selects 'Buy'
 
-    //This stores the contents of the previous variables into the local storage
     var maxId = 0;
     var itemKey;
 
@@ -20,29 +19,36 @@ function handleAddToCart(prod)
         maxId = -1; //This is set to -1 to allow the itemKey to be greater than maxId, to allow the below if statement to work
         for (var i = 0; i < localStorage.length; ++i) //https://stackoverflow.com/questions/8419354/get-html5-localstorage-keys
         {
-            itemKey = parseInt(localStorage.key(i));
+            itemKey = parseInt(localStorage.key(i)); //This line sets the value of itemKey to an integer
             if (itemKey > maxId)
             {
-                maxId = itemKey + 1;
+                maxId = itemKey + 1; //This is done to ensure all the keys are unique, ensuring nothing is overridden in the local storage
             }
         }
     }
 
+    //This stores the contents of the previously declared variables into the local storage, to be used in cart.html
     localStorage.setItem(maxId, itemTitle + ", " + itemPrice + ", " + itemImage);
 }
 
+//This function controls what happens when the user selects 'Read More'
 function readMoreNav(readMoreProd)
 {
+    //These variables contain the needed information that transferred into item.html
     var readMoreContainer = readMoreProd.parentElement.parentElement;
     var readItemTitle = readMoreContainer.getElementsByTagName("p")[0].innerHTML;
     var readItemInfo = readMoreContainer.getElementsByTagName("p")[1].innerHTML;
-    readItemInfo = readItemInfo.split("<a")[0];
+    readItemInfo = readItemInfo.split("<a")[0]; //This line reads the contents of readItemInfo and removes the <a> tag and it's contents, that is added below
     var readItemPrice = readMoreContainer.getElementsByTagName("p")[2].innerHTML;
     var readItemImage = readMoreContainer.getElementsByTagName("img")[0].getAttribute("src");
 
-    var readMoreKey = 1;
+    //This sets the key to always be equal to 1
+    //This isn't an issue, because the contents of the session storage is cleared everytime 'Read More' is selected
+    var readMoreKey = 1; 
 
-    sessionStorage.clear();
+    sessionStorage.clear(); //This line clears the session storage
+
+    //This stores the contents of the previously declared variables into the local storage, to be used in item.html
     sessionStorage.setItem(readMoreKey, readItemTitle + ", " + readItemInfo + ", " + readItemPrice + ", " + readItemImage);
 }
 
@@ -98,7 +104,7 @@ var jumperInfo = "cotton authentic character and practicality are combined in th
 var tshirtPrice = "£19.99";
 var tshirtInfo = "cotton authentic character and practicality are combined in this summery t-shirt for students that goes with everything to create casual looks";
 
-//This is referring back to the id given in products.html and linking the two files together, to be used
+//This is referring back to the id given in products.html and linking the two files together to be used accordingly
 var prodParent = document.getElementById("productsContainer");
 
 //This for loop is used to go through and store the .jpg file name of each hoodie in hoodieList
@@ -123,7 +129,7 @@ for (var i = 0; i < 34; i++)
     var prodReadMore = document.createElement("a");
     var prodBuy = document.createElement("button");
     prodBuy.setAttribute("onclick", "handleAddToCart(this)"); //This is adding the 'Buy' button onto each product card
-    prodReadMore.setAttribute("onclick", "readMoreNav(this)")
+    prodReadMore.setAttribute("onclick", "readMoreNav(this)"); //This is adding the 'Read More' tag onto each product card
 
     //This is linking the class names from formats.css causing each product card to be formatted
     prodChild.classList.add("product-card");
@@ -136,19 +142,21 @@ for (var i = 0; i < 34; i++)
 
     //This is adding the relevant information that is needed for each card
     prodImage.src = "store-items/" + hoodieTitle; //This is importing the corresponding image
-    prodImage.alt = "This is an image of a " + hoodieName;
-    prodBuy.innerHTML = "Buy";
-    prodName.innerHTML = hoodieName;
-    prodReadMore.innerHTML = " (Read More)";
-    prodReadMore.href = "item.html";
-    prodInfo.innerHTML = hoodieInfo;
-    prodPrice.innerHTML = hoodiePrice;
+    prodImage.alt = "This is an image of a " + hoodieName; //This adds an alt tag with the product name to the image
+    prodBuy.innerHTML = "Buy"; //This is the text that is on the 'Buy' button
+    prodName.innerHTML = hoodieName; //This adds the name of the product
+    prodReadMore.innerHTML = "(Read More)"; //This adds the text '(Read More)' which has the function to navigate to item.html added earlier
+    prodReadMore.href = "item.html"; //This is the location of the page that is navigated to when '(Read More)' is selected
+    prodInfo.innerHTML = hoodieInfo; //This adds the description of the product
+    prodPrice.innerHTML = hoodiePrice; //This adds the price of the product
 
+    //This if statement is allows the user to navigate to the hoodies using the button at the top of the page
     if (i == 0)
     {
         prodChild.id = "idHoodies";
     }
 
+    //This collects everything from above, ready to be added into products.html in the order below
     prodInfo.appendChild(prodReadMore);
     prodChild.appendChild(prodImage);
     prodChild.appendChild(prodName);
@@ -156,19 +164,24 @@ for (var i = 0; i < 34; i++)
     prodChild.appendChild(prodPrice);
     prodChild.appendChild(prodBuy);
 
+    //This adds the 'childs' above into products.html
     prodParent.appendChild(prodChild);
 }
 
+//This for loop is used to go through and store the .jpg file name of each jumper in jumperList
 for (var o = 0; o < 40; o++)
 {
     var jumperTitle;
     var jumperName;
 
+    //This sets the title of the jumper to the .jpg file name
     jumperTitle = jumperList[o];
 
+    //The two lines below find and replace any '-' in the names with a space
     jumperName = jumperTitle.split(".") [0];
     jumperName = jumperName.replaceAll("-", " ");
 
+    //The below variables are created because there is one div, image, a tag and button and three p tags used per item
     var prodChild = document.createElement("div");
     var prodImage = document.createElement("img");
     var prodName = document.createElement("p");
@@ -176,9 +189,10 @@ for (var o = 0; o < 40; o++)
     var prodPrice = document.createElement("p");
     var prodReadMore = document.createElement("a");
     var prodBuy = document.createElement("button");
-    prodBuy.setAttribute("onclick", "handleAddToCart(this)");
-    prodReadMore.setAttribute("onclick", "readMoreNav(this)")
+    prodBuy.setAttribute("onclick", "handleAddToCart(this)"); //This is adding the 'Buy' button onto each product card
+    prodReadMore.setAttribute("onclick", "readMoreNav(this)"); //This is adding the 'Read More' tag onto each product card
 
+    //This is linking the class names from formats.css causing each product card to be formatted
     prodChild.classList.add("product-card");
     prodImage.classList.add("product-img");
     prodName.classList.add("product-title");
@@ -187,19 +201,23 @@ for (var o = 0; o < 40; o++)
     prodReadMore.classList.add("read-more");
     prodBuy.classList.add("buy");
 
-    prodImage.src = "store-items/" + jumperTitle;
-    prodBuy.innerHTML = "Buy";
-    prodName.innerHTML = jumperName;
-    prodReadMore.innerHTML = " (Read More)";
-    prodReadMore.href = "item.html";
-    prodInfo.innerHTML = jumperInfo;
-    prodPrice.innerHTML = jumperPrice;
+    //This is adding the relevant information that is needed for each card
+    prodImage.src = "store-items/" + jumperTitle; //This is importing the corresponding image
+    prodImage.alt = "This is an image of a " + jumperName; //This adds an alt tag with the product name to the image
+    prodBuy.innerHTML = "Buy"; //This is the text that is on the 'Buy' button
+    prodName.innerHTML = jumperName; //This adds the name of the product
+    prodReadMore.innerHTML = "(Read More)"; //This adds the text '(Read More)' which has the function to navigate to item.html added earlier
+    prodReadMore.href = "item.html"; //This is the location of the page that is navigated to when '(Read More)' is selected
+    prodInfo.innerHTML = jumperInfo; //This adds the description of the product
+    prodPrice.innerHTML = jumperPrice; //This adds the price of the product
 
+    //This if statement is allows the user to navigate to the jumpers using the button at the top of the page
     if (o == 0)
     {
         prodChild.id = "idJumpers";
     }
 
+    //This collects everything from above, ready to be added into products.html in the order below
     prodInfo.appendChild(prodReadMore);
     prodChild.appendChild(prodImage);
     prodChild.appendChild(prodName);
@@ -207,19 +225,24 @@ for (var o = 0; o < 40; o++)
     prodChild.appendChild(prodPrice);
     prodChild.appendChild(prodBuy);
 
+    //This adds the 'childs' above into products.html
     prodParent.appendChild(prodChild);
 }
 
+//This for loop is used to go through and store the .jpg file name of each t-shirt in tshirtList
 for (var u = 0; u < 34; u++)
 {
     var tshirtTitle;
     var tshirtName;
 
+    //This sets the title of the t-shirt to the .jpg file name
     tshirtTitle = tshirtList[u];
 
+    //The two lines below find and replace any '-' in the names with a space
     tshirtName = tshirtTitle.split(".") [0];
     tshirtName = tshirtName.replaceAll("-", " ");
 
+    //The below variables are created because there is one div, image, a tag and button and three p tags used per item
     var prodChild = document.createElement("div");
     var prodImage = document.createElement("img");
     var prodName = document.createElement("p");
@@ -227,9 +250,10 @@ for (var u = 0; u < 34; u++)
     var prodPrice = document.createElement("p");
     var prodReadMore = document.createElement("a");
     var prodBuy = document.createElement("button");
-    prodBuy.setAttribute("onclick", "handleAddToCart(this)");
-    prodReadMore.setAttribute("onclick", "readMoreNav(this)")
+    prodBuy.setAttribute("onclick", "handleAddToCart(this)"); //This is adding the 'Buy' button onto each product card
+    prodReadMore.setAttribute("onclick", "readMoreNav(this)"); //This is adding the 'Read More' tag onto each product card
 
+    //This is linking the class names from formats.css causing each product card to be formatted
     prodChild.classList.add("product-card");
     prodImage.classList.add("product-img");
     prodName.classList.add("product-title");
@@ -238,19 +262,23 @@ for (var u = 0; u < 34; u++)
     prodReadMore.classList.add("read-more");
     prodBuy.classList.add("buy");
 
-    prodImage.src = "store-items/" + tshirtTitle;
-    prodBuy.innerHTML = "Buy";
-    prodName.innerHTML = tshirtName;
-    prodReadMore.innerHTML = " (Read More)";
-    prodReadMore.href = "item.html";
-    prodInfo.innerHTML = tshirtInfo;
-    prodPrice.innerHTML = tshirtPrice;
+    //This is adding the relevant information that is needed for each card
+    prodImage.src = "store-items/" + tshirtTitle; //This is importing the corresponding image
+    prodImage.alt = "This is an image of a " + tshirtName; //This adds an alt tag with the product name to the image
+    prodBuy.innerHTML = "Buy"; //This is the text that is on the 'Buy' button
+    prodName.innerHTML = tshirtName; //This adds the name of the product
+    prodReadMore.innerHTML = "(Read More)"; //This adds the text '(Read More)' which has the function to navigate to item.html added earlier
+    prodReadMore.href = "item.html"; //This is the location of the page that is navigated to when '(Read More)' is selected
+    prodInfo.innerHTML = tshirtInfo; //This adds the description of the product
+    prodPrice.innerHTML = tshirtPrice; //This adds the price of the product
 
+    //This if statement is allows the user to navigate to the t-shirts using the button at the top of the page
     if (u == 0)
     {
         prodChild.id = "idTshirts";
     }
 
+    //This collects everything from above, ready to be added into products.html in the order below
     prodInfo.appendChild(prodReadMore);
     prodChild.appendChild(prodImage);
     prodChild.appendChild(prodName);
@@ -258,5 +286,6 @@ for (var u = 0; u < 34; u++)
     prodChild.appendChild(prodPrice);
     prodChild.appendChild(prodBuy);
 
+    //This adds the 'childs' above into products.html
     prodParent.appendChild(prodChild);
 }
