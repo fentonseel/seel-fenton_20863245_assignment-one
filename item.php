@@ -21,9 +21,10 @@
             <div class="page-selection">
                 <ul>
                     <!--Each of these three tags are buttons that allow the user to navigate through different pages-->
-                    <li><a href="index.html"> Home </a></li> 
-                    <li><a href="products.html"> Products </a></li>
-                    <li><a href="cart.html"> Cart </a></li>
+                    <li><a href="index.php"> Home </a></li> 
+                    <li><a href="products.php"> Products </a></li>
+                    <li><a href="cart.php"> Cart </a></li>
+                    <li><a href="register.php"> Register </li>
                 </ul>
             </div>
             
@@ -37,25 +38,16 @@
             <!--This is the button that are shown when the hamburger menu is selected-->
             <div class="page-selection-burger-menu">
                 <ul class="hide" id=burgerMenuSelection>
-                    <li><a class="home-bm" href="index.html"> Home </a></li>
-                    <li><a class="products-bm" href="products.html"> Products </a></li>
-                    <li><a class="cart-bm" href="cart.html"> Cart </a></li>
+                    <li><a class="home-bm" href="index.php"> Home </a></li>
+                    <li><a class="products-bm" href="products.php"> Products </a></li>
+                    <li><a class="cart-bm" href="cart.php"> Cart </a></li>
+                    <li><a class="register-bm" href="register.php"> Register </a></li>
                 </ul>
             </div>
         </div>
 
-        <!--The home container is what has all the content of the page in it-->
-        <div class="home-container">
-            <h2 class="page-title">Where Opportunity Creates Success</h2> <!--The title of the page, shown below the header-->
-            <p class="home-content"> <!--The paragraph of text below the title-->
-                Every student at The University of Central Lancashire is automatically a member of the Student's Union. We're here to make life better for students - inspiring you to succeed and achieve your goals.
-            </p>
-            <h2 class="video-title">Together</h2>
-            <iframe class="video" title="together-video" src="https://www.youtube.com/embed/xTvk2OCMyWE"></iframe> <!--This is the first video that is an embedded YouTube video-->
-            <h2 class="video-title">Join our global community</h2>
-            <video controls class="video" title="global-community-video">
-                <source src="./UCLan-Together-Join-our-global-community.mp4" type="video/mp4" />
-            </video> <!--The second video that is a downloaded mp4-->
+        <!--This div contains the contents of the enlarged product card shown to the user-->
+        <div class="product-container" id="readMoreContainer">
         </div>
         
         <!--The below div is the contents of the footer-->
@@ -86,6 +78,8 @@
                 </div>
             </div>
         </div>
+
+        <script src="readmore.js"></script> <!--This links the JavaScript file readmore.js to this page-->
         <script src="standard.js"></script> <!--This links the JavaScript file standard.js to this, allowing the use of the hamburger menu (https://www.w3schools.com/howto/howto_css_menu_icon.asp)-->
     </body>
 </html>
