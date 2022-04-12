@@ -48,6 +48,12 @@
 
         <!--The home container is what has all the content of the page in it-->
         <div class="home-container">
+            <h2 class="page-title">Offers</h2>
+            <div class="offers-container">
+                <?php
+                    require 'php/fetch_offers.php';
+                ?>
+            </div>
             <h2 class="page-title">Where Opportunity Creates Success</h2> <!--The title of the page, shown below the header-->
             <p class="home-content"> <!--The paragraph of text below the title-->
                 Every student at The University of Central Lancashire is automatically a member of the Student's Union. We're here to make life better for students - inspiring you to succeed and achieve your goals.

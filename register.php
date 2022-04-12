@@ -46,21 +46,29 @@
             </div>
         </div>
 
-        <div>
+        <div class="register-content">
             <form action="php/post_form.php" method="post">
-                <label for="fullName">Full Name:</label>
-                <input type="text" id="fullName" name="fullName" placeholder="Enter Full Name">
+                <div class="full-name">
+                    <label for="fullName">Full Name:</label>
+                    <input type="text" id="fullName" name="fullName" placeholder="Enter Full Name">
+                </div>
 
-                <label for="password">Password:</label>
-                <input type="text" id="password" name="password" placeholder="Enter Password"> 
+                <div class="password">
+                    <label for="password">Password:</label>
+                    <input type="text" id="password" name="password" placeholder="Enter Password"> 
+                </div>
 
-                <label for="email">Email:</label>
-                <input type="text" id="email" name="email" placeholder="Enter Email"> 
+                <div class="email">
+                    <label for="email">Email:</label>
+                    <input type="text" id="email" name="email" placeholder="Enter Email"> 
+                </div>
 
-                <label for="address">Address:</label>
-                <input type="text" id="address" name="address" placeholder="Enter Address"> 
+                <div class="address">
+                    <label for="address">Address:</label>
+                    <input type="text" id="address" name="address" placeholder="Enter Address"> 
+                </div>
 
-                <input type="submit" value="Submit" name="register-submission">
+                <input class="submit" type="submit" value="Submit" name="register-submission">
             </form>
         </div>
 

@@ -516,6 +516,72 @@ Setting a bottom border, font size, colour and alligning the text to the centre*
     border-bottom: var(--black) solid 2px;
 }
 
+.offers-container
+{
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    text-align: center;
+    display: flex;
+    width: 100%;
+    height: auto;
+}
+
+.offer-card
+{
+    width: 30%;
+    height: auto;
+    background-color: var(--silver);
+}
+
+.offer-title
+{
+    font-size: 20px;
+    color: var(--gold);
+}
+
+.offer-info
+{
+    font-size: 16px;
+    font-weight: lighter;
+    color: var(--black);
+}
+
+.register-content
+{
+    display: block;
+    text-align: center;
+    margin: 35px;
+    margin-bottom: 381px;
+}
+
+.full-name
+{
+    padding: 10px;
+}
+
+.password
+{
+    padding: 10px;
+}
+
+.email
+{
+    padding: 10px;
+}
+
+.address
+{
+    padding: 10px;
+}
+
+.submit
+{
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-left: 10px;
+}
+
 /*This media query is activated when the page width decreases below 1020 pixels
 This is so then the content adapts to the size of the screen accordingly*/
 @media only screen and (max-width: 1020px)
