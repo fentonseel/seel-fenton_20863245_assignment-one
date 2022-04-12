@@ -59,9 +59,9 @@
 
         <!--This div contains the contents of the page inbetween the header and footer-->
         <div class="products" id="productsContainer"> <!--The id is used to link to products.js-->
-        <?php
-        require 'php/fetch_products.php';
-        ?>
+            <?php
+                require 'php/fetch_products.php';
+            ?>
         </div>
 
         <!--The below div is the contents of the footer-->

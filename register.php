@@ -54,6 +54,12 @@
                 <label for="password">Password:</label>
                 <input type="text" id="password" name="password" placeholder="Enter Password"> 
 
+                <label for="email">Email:</label>
+                <input type="text" id="email" name="email" placeholder="Enter Email"> 
+
+                <label for="address">Address:</label>
+                <input type="text" id="address" name="address" placeholder="Enter Address"> 
+
                 <input type="submit" value="Submit" name="register-submission">
             </form>
         </div>

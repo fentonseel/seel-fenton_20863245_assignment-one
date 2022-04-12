@@ -48,6 +48,9 @@
 
         <!--This div contains the contents of the enlarged product card shown to the user-->
         <div class="product-container" id="readMoreContainer">
+            <?php
+                require 'php/fetch_products.php';
+            ?>
         </div>
         
         <!--The below div is the contents of the footer-->

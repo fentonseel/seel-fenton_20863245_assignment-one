@@ -4,8 +4,8 @@ if (isset($_POST['register-submission'])){
 
     $fullName = $_POST['fullName'];
     $password = $_POST['password'];
-    $email = 'john@outlook.com';
-    $address = "1 john street";
+    $email = $_POST['email'];
+    $address = $_POST['address'];
 
     $sql = "insert into tbl_users (user_full_name, user_pass, user_address, user_email) values (?,?,?,?)";
     $statement = mysqli_stmt_init($conn);
