@@ -547,6 +547,30 @@ Setting a bottom border, font size, colour and alligning the text to the centre*
     color: var(--black);
 }
 
+.search-bar
+{
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.search-bar a
+{
+    font-size: 20px;
+    background-color: var(--red);
+    color: var(--white);
+    padding: 7px;
+    border-radius: 25px;
+    text-decoration: none;
+}
+
+.search-bar input
+{
+    font-size: 20px;
+    padding: 5px;
+    border-radius: 25px;
+}
+
 .register-content
 {
     display: block;

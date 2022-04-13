@@ -15,7 +15,7 @@ $res = mysqli_stmt_get_result($statement);
 
 while($row = mysqli_fetch_row($res)){
     echo '
-    <div class="product-card" id="idHoodies">
+    <div class="product-card" id="'. $row[5] .'">
     <img class="product-img" src="'. $row[3] .'" alt="This is an image of '. $row[1] .'">
     <p class="product-title">'. $row[1] .'</p>
     <p class="product-info">'. $row[2] .'<a onclick="readMoreNav(this)" class="read-more" href="item.php">(Read More)</a></p>

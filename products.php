@@ -45,19 +45,24 @@
             </div>
         </div>
 
+        <div class="search-bar">
+            <a for="search" href="#search">Search</a>
+            <input type="text" id="search" name="search" placeholder="Search for Products">
+        </div>
+
         <!--This div is what allows the user to easily navigate to each type of product-->
         <div class="prod-nav">
             <ul>
-                <li><a href="#idHoodies">Hoodies |</a></li> <!--These all have a href which links to products.js allowing the navigation-->
-                <li><a href="#idJumpers"> Jumpers |</a></li>
-                <li><a href="#idTshirts"> T-Shirts</a></li>
+                <li><a href="#UCLan Hoodie">Hoodies |</a></li> <!--These all have a href which links to products.js allowing the navigation-->
+                <li><a href="#UCLan Logo Jumper"> Jumpers |</a></li>
+                <li><a href="#UCLan Logo Tshirt"> T-Shirts</a></li>
             </ul>
         </div>
 
         <!--This is a button allowing the user to navigate back to the top of the page easily-->
         <a class="back-to-top" href="#top">Back To Top</a>
 
-        <!--This div contains the contents of the page inbetween the header and footer-->
+        <!--This div contains the contents of the products table-->
         <div class="products" id="productsContainer"> <!--The id is used to link to products.js-->
             <?php
                 require 'php/fetch_products.php';
