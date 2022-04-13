@@ -52,13 +52,23 @@
             <p>The items added to your shopping cart are:</p>
 
             <div class="cart-content" id="cartContainer"> 
-
                 <!--This div is an empty container only shown when the user's cart is empty-->
                 <div class="hide" id="cartNone">
                     <div class="empty-cart">
                         <h2 class="empty-cart-title">Your Cart is Empty</h2>
                     </div>
                 </div>         
+            </div>
+
+            <div class="login-container" id="noLogin">
+                <p>Must be logged in to purchase items</p>
+                <label for="email">Email:</label>
+                <input type="text" id="email" name="email" placeholder="Enter Email">
+
+                <label for="password">Password:</label>
+                <input type="text" id="password" name="password" placeholder="Enter Password">
+
+                <input class="login" type="login" value="Login" name="login">
             </div>
         </div>
 

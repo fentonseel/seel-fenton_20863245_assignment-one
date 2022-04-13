@@ -66,6 +66,11 @@
         <div class="products" id="productsContainer"> <!--The id is used to link to products.js-->
             <?php
                 require 'php/fetch_products.php';
+
+                if (array_key_exists('Buy', $_POST))
+                {
+                    require 'php/add_to_cart.php';
+                }
             ?>
         </div>
 
