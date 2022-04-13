@@ -62,10 +62,10 @@
 
             <div class="login-container" id="noLogin">
                 <p>Must be logged in to purchase items</p>
-                <label for="email">Email:</label>
+                <label class="email" for="email">Email:</label>
                 <input type="text" id="email" name="email" placeholder="Enter Email">
 
-                <label for="password">Password:</label>
+                <label class="password" for="password">Password:</label>
                 <input type="text" id="password" name="password" placeholder="Enter Password">
 
                 <input class="login" type="login" value="Login" name="login">

@@ -613,21 +613,46 @@ Setting a bottom border, font size, colour and alligning the text to the centre*
 .full-name
 {
     padding: 10px;
+    font-size: 18px;
+}
+
+.full-name input
+{
+    font-size: 18px;
 }
 
 .password
 {
     padding: 10px;
+    font-size: 18px;
 }
+
+.password input
+{
+    font-size: 18px;
+}
+
 
 .email
 {
     padding: 10px;
+    font-size: 18px;
+}
+
+.email input
+{
+    font-size: 18px;
 }
 
 .address
 {
     padding: 10px;
+    font-size: 18px;
+}
+
+.address input
+{
+    font-size: 18px;
 }
 
 .submit
@@ -635,6 +660,10 @@ Setting a bottom border, font size, colour and alligning the text to the centre*
     padding-left: 10px;
     padding-right: 10px;
     margin-left: 10px;
+    font-size: 18px;
+    background-color: var(--red);
+    color: var(--white);
+    border-radius: 25px;
 }
 
 /*This media query is activated when the page width decreases below 1020 pixels
