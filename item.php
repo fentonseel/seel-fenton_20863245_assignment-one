@@ -47,7 +47,7 @@
         </div>
 
         <!--This div contains the contents of the enlarged product card shown to the user-->
-        <div class="product-container" id="readMoreContainer">
+        <div class="product-container">
             <?php
                 require 'php/fetch_item.php';
             ?>
