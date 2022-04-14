@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
+    <head> 
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title> UCLAN Student Clothes Store </title> <!--This is the name of the webpage shown on the tab during runtime-->
         <link rel="stylesheet" href="formats.css"> <!--This is a reference to the formats.css file to link the css code to this html page-->
     </head>
+
     <!--Inside this is the content of the page.
     On most of the tags there is a 'class=' which refers back to the
     css file, which formats the content of each class uniquely-->
@@ -45,35 +46,13 @@
             </div>
         </div>
 
-        <div class="search-bar">
-            <a for="search" href="#search">Search</a>
-            <input type="text" id="search" name="search" placeholder="Search for Products">
-        </div>
-
-        <!--This div is what allows the user to easily navigate to each type of product-->
-        <div class="prod-nav">
-            <ul>
-                <li><a href="#UCLan Hoodie">Hoodies |</a></li> <!--These all have a href which links to products.js allowing the navigation-->
-                <li><a href="#UCLan Logo Jumper"> Jumpers |</a></li>
-                <li><a href="#UCLan Logo Tshirt"> T-Shirts</a></li>
-            </ul>
-        </div>
-
-        <!--This is a button allowing the user to navigate back to the top of the page easily-->
-        <a class="back-to-top" href="#top">Back To Top</a>
-
-        <!--This div contains the contents of the products table-->
-        <div class="products" id="productsContainer"> <!--The id is used to link to products.js-->
+        <!--This div contains the contents of the enlarged product card shown to the user-->
+        <div class="product-container" id="readMoreContainer">
             <?php
-                require 'php/fetch_products.php';
-
-                if (array_key_exists('Buy', $_POST))
-                {
-                    require 'php/add_to_cart.php';
-                }
+                require 'php/fetch_item.php';
             ?>
         </div>
-
+        
         <!--The below div is the contents of the footer-->
         <div class="footer">
             <div class="footer-headings">
@@ -102,7 +81,8 @@
                 </div>
             </div>
         </div>
-        
+
+        <script src="products.js"></script> <!--This links the JavaScript file readmore.js to this page-->
         <script src="standard.js"></script> <!--This links the JavaScript file standard.js to this, allowing the use of the hamburger menu (https://www.w3schools.com/howto/howto_css_menu_icon.asp)-->
     </body>
 </html>
