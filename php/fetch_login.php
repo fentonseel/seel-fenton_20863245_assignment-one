@@ -5,12 +5,13 @@ if(isset($_POST["login"]))
 
     $statement = mysqli_stmt_init($conn);
 
+    $sql = ("select * from tbl_users where user_email=?");
+
     if (!mysqli_stmt_prepare($statement, $sql)){
         header('Location: ../index.php');
         exit();
     }
-
-    $sql = ("select * from tbl_users where user_email=?");
+    
     mysqli_stmt_bind_param($statement, "s", $_POST["email"]);    
     
     mysqli_stmt_execute($statement);
@@ -22,10 +23,13 @@ if(isset($_POST["login"]))
         {
             session_start();
             $_SESSION["user"] = $row[1];
+            header('Location: ../cart.php?error=none');
+            exit();
         }
         else
         {
-            
+            header('Location: ../index.php');
+            exit();
         }
     }
 }

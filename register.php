@@ -12,6 +12,10 @@
     On most of the tags there is a 'class=' which refers back to the
     css file, which formats the content of each class uniquely-->
     <body> 
+        <?php
+            session_start();
+        ?>
+
         <!--This is a division for the navigation bar of the home page-->
         <div class="nav-bar">
             <img class="logo" src="UCLAN-logo.png" alt="UCLan Logo"> <!--This finds and places the image UCLAN-logo.png onto the page-->    
@@ -24,7 +28,16 @@
                     <li><a href="index.php"> Home </a></li> 
                     <li><a href="products.php"> Products </a></li>
                     <li><a href="cart.php"> Cart </a></li>
-                    <li><a href="register.php"> Register </li>
+                    <?php
+                    if (isset($_SESSION["user"]))
+                    {
+                        echo '<li><a href="register.php?logout=true"> Logout </a><li>';
+                    }
+                    else
+                    {
+                        echo '<li><a href="register.php"> Register </a></li>';
+                    }
+                    ?>
                 </ul>
             </div>
             
@@ -41,10 +54,32 @@
                     <li><a class="home-bm" href="index.php"> Home </a></li>
                     <li><a class="products-bm" href="products.php"> Products </a></li>
                     <li><a class="cart-bm" href="cart.php"> Cart </a></li>
-                    <li><a class="register-bm" href="register.php"> Register </a></li>
+                    <?php
+                    if (isset($_SESSION["user"]))
+                    {
+                        echo '<li><a href="register.php?logout=true"> Logout </a><li>';
+                    }
+                    else
+                    {
+                        echo '<li><a href="register.php"> Register </a></li>';
+                    }
+                    ?>
                 </ul>
             </div>
         </div>
+
+        <?php
+        if(isset($_GET["logout"]))
+        {
+            if($_GET["logout"] == "true")
+            {
+                session_unset();
+                session_destroy();
+
+                header("Location: register.php");
+            }
+        }
+        ?>
 
         <div class="register-content">
             <form action="php/post_form.php" method="post">
@@ -56,6 +91,11 @@
                 <div class="password">
                     <label for="password">Password:</label>
                     <input type="text" id="password" name="password" placeholder="Enter Password"> 
+                </div>
+
+                <div class="password">
+                    <label for="confirmPassword">Confirm Password:</label>
+                    <input type="text" id="confirmPassword" name="confirmPassword" placeholder="Confirm Password"> 
                 </div>
 
                 <div class="email">

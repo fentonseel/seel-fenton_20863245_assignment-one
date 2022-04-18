@@ -12,6 +12,10 @@
     On most of the tags there is a 'class=' which refers back to the
     css file, which formats the content of each class uniquely-->
     <body> 
+        <?php
+            session_start();
+        ?>
+
         <!--This is a division for the navigation bar of the home page-->
         <div class="nav-bar">
             <img class="logo" src="UCLAN-logo.png" alt="UCLan Logo"> <!--This finds and places the image UCLAN-logo.png onto the page-->    
@@ -24,7 +28,16 @@
                     <li><a href="index.php"> Home </a></li> 
                     <li><a href="products.php"> Products </a></li>
                     <li><a href="cart.php"> Cart </a></li>
-                    <li><a href="register.php"> Register </li>
+                    <?php
+                    if (isset($_SESSION["user"]))
+                    {
+                        echo '<li><a href="register.php?logout=true"> Logout </a><li>';
+                    }
+                    else
+                    {
+                        echo '<li><a href="register.php"> Register </a></li>';
+                    }
+                    ?>
                 </ul>
             </div>
             
@@ -41,7 +54,16 @@
                     <li><a class="home-bm" href="index.php"> Home </a></li>
                     <li><a class="products-bm" href="products.php"> Products </a></li>
                     <li><a class="cart-bm" href="cart.php"> Cart </a></li>
-                    <li><a class="register-bm" href="register.php"> Register </a></li>
+                    <?php
+                    if (isset($_SESSION["user"]))
+                    {
+                        echo '<li><a href="register.php?logout=true"> Logout </a><li>';
+                    }
+                    else
+                    {
+                        echo '<li><a href="register.php"> Register </a></li>';
+                    }
+                    ?>
                 </ul>
             </div>
         </div>
@@ -49,7 +71,22 @@
         <!--This div contains the contents of the cart, showing the user what they have added and allowing them to remove items too-->
         <div class="cart">
             <h1 class="cart-title">Shopping Cart</h1>
-            <p>The items added to your shopping cart are:</p>
+            <?php
+            if(isset($_SESSION["user"]))
+            {
+                echo '<div>
+                <p>Welcome '. $_SESSION["user"] .'<p>
+                <p>The items added to your shopping cart are:</p>
+                </div>';
+            }
+            else
+            {
+                echo '<div>
+                <p>MUST BE LOGGED IN TO PURCHASE ITEMS</p>
+                <p>The items added to your shopping cart are:</p>
+                </div>';
+            }
+            ?>
 
             <div class="cart-content" id="cartContainer"> 
                 <!--This div is an empty container only shown when the user's cart is empty-->
@@ -60,8 +97,28 @@
                 </div>         
             </div>
 
-            <form action="fetch_login.php" method="post" class="login-container" id="noLogin">
-                <p>Must be logged in to purchase items</p>
+            <?php
+            if(isset($_SESSION["user"]))
+            {
+                if(isset($_GET["error"]))
+                {
+                    if($_GET["error"] == "none")
+                    {
+                        echo'<div>
+                        <p class="login-message">Login Successful!</p>
+                        </div>';
+                    }
+                    else
+                    {
+                        echo'<div>
+                        <p class="invalid-login-message">Invalid Login</p>
+                        </div>';
+                    }
+                }   
+            }
+            else
+            {
+                echo'<form action="php/fetch_login.php" method="post" class="login-container" id="noLogin">
                 <label class="email" for="email">Email:</label>
                 <input type="text" id="email" name="email" placeholder="Enter Email">
 
@@ -69,7 +126,9 @@
                 <input type="text" id="password" name="password" placeholder="Enter Password">
 
                 <input class="login" type="submit" value="Login" name="login">
-            </form>
+                </form>';
+            }  
+            ?>
         </div>
 
         <!--The below div is the contents of the footer-->

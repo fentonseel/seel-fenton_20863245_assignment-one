@@ -598,6 +598,13 @@ Setting a bottom border, font size, colour and alligning the text to the centre*
     border-radius: 25px;
 }
 
+.login-message
+{
+    font-size: 18px;
+    color: var(--grass);
+    text-align: center;
+}
+
 .register-content
 {
     display: block;
