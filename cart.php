@@ -105,6 +105,7 @@
                     if($_GET["error"] == "none")
                     {
                         echo'<div>
+                        <button class="checkout">Checkout</button>
                         <p class="login-message">Login Successful!</p>
                         </div>';
                     }
@@ -119,11 +120,15 @@
             else
             {
                 echo'<form action="php/fetch_login.php" method="post" class="login-container" id="noLogin">
-                <label class="email" for="email">Email:</label>
-                <input type="text" id="email" name="email" placeholder="Enter Email">
+                <div>
+                    <label class="email" for="email">Email:</label>
+                    <input type="text" id="email" name="email" placeholder="Enter Email">
+                </div>
 
-                <label class="password" for="password">Password:</label>
-                <input type="text" id="password" name="password" placeholder="Enter Password">
+                <div>
+                    <label class="password" for="password">Password:</label>
+                    <input type="text" id="password" name="password" placeholder="Enter Password">
+                </div>
 
                 <input class="login" type="submit" value="Login" name="login">
                 </form>';

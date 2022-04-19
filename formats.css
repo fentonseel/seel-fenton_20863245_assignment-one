@@ -227,7 +227,7 @@ It sets the colour to blue, removes any default styling and changes the font siz
     height: 400px;
 }
 
-/*This contains all of the product cards on products.html
+/*This contains all of the product cards on products.php
 It sets a size and display of flex, allowing the page to be easily responsive*/
 .products
 {
@@ -289,7 +289,7 @@ It sets the colour, makes it bold and alligns the text to the centre*/
     color: var(--red);
 }
 
-/*This formats the 'Buy' button on products.html and item.html
+/*This formats the 'Buy' button on products.php and item.php
 Setting the background colour, text colour, font size, font weight and button size*/
 .buy
 {
@@ -345,12 +345,12 @@ Setting the colour to blue and causing it to be visable thorughout the page*/
     background-color: var(--cloud);
 }
 
-/*This contains all the contents of cart.html*/
+/*This contains all the contents of cart.php*/
 .cart
 {
     display: block;
     width: 60%;
-    margin: 16px auto;
+    margin: 30px auto;
     height: 100%;
 }
 
@@ -470,7 +470,7 @@ Setting a size and centering it*/
     align-self: center;
 }
 
-/*This formats the name of each product on item.html
+/*This formats the name of each product on item.php
 Setting the font size, weight and colour*/
 .rm-prod-title
 {
@@ -480,14 +480,14 @@ Setting the font size, weight and colour*/
     color: var(--dark-blue);
 }
 
-/*This formats the description of the products on item.html
+/*This formats the description of the products on item.php
 It puts a gap between the border and the text making it more aesthetically pleasing*/
 .rm-prod-info
 {
     margin-left: 10px;
 }
 
-/*This formats the price of each product on item.html
+/*This formats the price of each product on item.php
 Setting the colour and font weight*/
 .rm-prod-price
 {
@@ -496,7 +496,7 @@ Setting the colour and font weight*/
     color: var(--red);
 }
 
-/*This formats cart.html when the local storage is empty
+/*This formats cart.php when the local storage is empty
 It sets a border and size to show the user where the products are added*/
 .empty-cart
 {
@@ -516,6 +516,7 @@ Setting a bottom border, font size, colour and alligning the text to the centre*
     border-bottom: var(--black) solid 2px;
 }
 
+/*This formats the contents of the offers*/
 .offers-container
 {
     display: inline-flex;
@@ -527,6 +528,7 @@ Setting a bottom border, font size, colour and alligning the text to the centre*
     height: auto;
 }
 
+/*This formats the contents of each offers card*/
 .offer-card
 {
     width: 30%;
@@ -536,12 +538,14 @@ Setting a bottom border, font size, colour and alligning the text to the centre*
     border: var(--black) solid 2px;
 }
 
+/*This formats the titles for each offer card*/
 .offer-title
 {
     font-size: 20px;
     color: var(--gold);
 }
 
+/*This formats the information within the offers cards*/
 .offer-info
 {
     font-size: 16px;
@@ -549,6 +553,7 @@ Setting a bottom border, font size, colour and alligning the text to the centre*
     color: var(--black);
 }
 
+/*This formats the seach bar on the products page*/
 .search-bar
 {
     display: block;
@@ -556,12 +561,14 @@ Setting a bottom border, font size, colour and alligning the text to the centre*
     margin-top: 20px;
 }
 
+/*This formats the search button on the products page*/
 .search-button
 {
     background-color: var(--red);
     color: var(--white);
 }
 
+/*This formats the text input on the search bar*/
 .search-bar input
 {
     font-size: 20px;
@@ -569,23 +576,32 @@ Setting a bottom border, font size, colour and alligning the text to the centre*
     border-radius: 25px;
 }
 
+/*This formats the contents of the login on cart.php*/
 .login-container
 {
-    display: block;
     text-align: center;
     margin: 10px;
 }
 
+.login-container div
+{
+    display: inline-flex;
+    flex-direction: column;
+}
+
+/*This formats the labels in the login container*/
 .login-container label
 {
     font-size: 20px;
 }
 
+/*This formats the inputs in the login container*/
 .login-container input
 {
     font-size: 20px;
 }
 
+/*This formats the login button*/
 .login
 {
     text-align: center;
@@ -598,6 +614,7 @@ Setting a bottom border, font size, colour and alligning the text to the centre*
     border-radius: 25px;
 }
 
+/*This formats the login message that is shown when the user successfully logs in*/
 .login-message
 {
     font-size: 18px;
@@ -605,59 +622,69 @@ Setting a bottom border, font size, colour and alligning the text to the centre*
     text-align: center;
 }
 
+/*This formats the contents of register.php*/
 .register-content
 {
-    display: block;
+    display: flex;
+    flex-direction: column;
     text-align: center;
     margin: 35px;
     margin-bottom: 381px;
 }
 
+/*This formats the Full Name requirement for register.php*/
 .full-name
 {
     padding: 10px;
     font-size: 18px;
 }
 
+/*This formats the Full Name input requirement for register.php*/
 .full-name input
 {
     font-size: 18px;
 }
 
+/*This formats the Password requirement for register.php*/
 .password
 {
     padding: 10px;
     font-size: 18px;
 }
 
+/*This formats the Password input requirement for register.php*/
 .password input
 {
     font-size: 18px;
 }
 
-
+/*This formats the Email requirement for register.php*/
 .email
 {
     padding: 10px;
     font-size: 18px;
 }
 
+/*This formats the Email input requirement for register.php*/
 .email input
 {
     font-size: 18px;
 }
 
+/*This formats the Address requirement for register.php*/
 .address
 {
     padding: 10px;
     font-size: 18px;
 }
 
+/*This formats the Address input requirement for register.php*/
 .address input
 {
     font-size: 18px;
 }
 
+/*This formats the submit button when registering*/
 .submit
 {
     padding-left: 10px;
@@ -667,6 +694,26 @@ Setting a bottom border, font size, colour and alligning the text to the centre*
     background-color: var(--red);
     color: var(--white);
     border-radius: 25px;
+}
+
+/*This formats the checkout button on cart.php*/
+.checkout
+{
+    display: inline-flex;
+    background-color: var(--red);
+    border-radius: 25px;
+    border-style: none;
+    font-size: 18px;
+    color: var(--white);
+    padding: 5px;
+    margin-left: 685px;
+    transition: 0.3s;
+}
+
+/*This changes the colour of the checkout button when it is hovered over*/
+.checkout:hover
+{
+    background-color: var(--dark-red);
 }
 
 /*This media query is activated when the page width decreases below 1020 pixels
@@ -779,6 +826,36 @@ This is so then the content adapts to the size of the screen accordingly*/
         width: 729px;
     }
 
+    .offer-title
+    {
+        font-size: 18px;
+    }
+
+    .search-bar input
+    {
+        font-size: 18px;
+    }
+
+    .login-container
+    {
+        margin-bottom: 165px;
+    }
+
+    .login-container input
+    {
+        font-size: 18px;
+    }
+
+    .login-container label
+    {
+        font-size: 18px;
+    }
+
+    .checkout
+    {
+        margin-left: 645px;
+    }
+
     /*This media query is activated when the page width decreases below 592 pixels
     This is so then the content adapts to the size of the screen*/
     @media only screen and (max-width: 592px)
@@ -853,6 +930,77 @@ This is so then the content adapts to the size of the screen accordingly*/
         .cart
         {
             width: 95%;
+        }
+
+        .cart p
+        {
+            font-size: 12px;
+        }
+
+        .offer-info
+        {
+            font-size: 15px;
+        }
+
+        .search-bar input
+        {
+            font-size: 15px;
+        }
+
+        .prod-nav ul
+        {
+            font-size: 15px;
+        }
+
+        .login-container
+        {
+            margin-bottom: 230px;
+        }
+
+        .login-container input
+        {
+            font-size: 16px;
+        }
+
+        .login-container label
+        {
+            font-size: 16px;
+        }
+
+        .register-content div
+        {
+            font-size: 15px;
+        }
+
+        .full-name input
+        {
+            font-size: 15px;
+        }
+
+        .password input
+        {
+            font-size: 15px;
+        }
+
+        .email input
+        {
+            font-size: 15px;
+        }
+
+        .address input
+        {
+            font-size: 15px;
+        }
+
+        .submit
+        {
+            font-size: 15px;
+        }
+
+        .checkout
+        {
+            margin-left: 140px;
+            font-size: 15px;
         }
 
         /*This media query is activated when the page width decreases below 490 pixels
@@ -979,6 +1127,32 @@ This is so then the content adapts to the size of the screen accordingly*/
             .cart-title
             {
                 font-size: 20px;
+            }
+
+            .offer-title
+            {
+                font-size: 14px;
+            }
+
+            .offer-info
+            {
+                font-size: 13px;
+            }
+
+            .login-container
+            {
+                text-align: left;
+                margin-bottom: 340px;
+            }
+
+            .login-container input
+            {
+                font-size: 16px;
+            }
+
+            .login-container label
+            {
+                font-size: 16px;
             }
 
             /*This media query is activated when the page width decreases below 415 pixels
